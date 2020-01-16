@@ -1,7 +1,7 @@
 <template lang="html">
-  <section v-if="beer">
+  <section id="details" v-if="beer">
     <h1>{{ beer.name }}</h1>
-    <img class="beer-image" :src="beer.image_url">
+    <!-- <img class="beer-image" :src="beer.image_url"> -->
     <button v-on:click="handleClick">Add to Favourites</button>
     <p>{{ beer.tagline }}</p>
     <p>{{ beer.abv }}%</p>
@@ -23,7 +23,9 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
 .beer-image{
   max-height:150px;
 }
+
 </style>

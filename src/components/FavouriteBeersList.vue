@@ -1,9 +1,10 @@
 <template lang="html">
   <div>
     <h1>Favourite Beers</h1>
-    <ul>
-      <li v-for="beer in favouritebeers">
+    <ul id="favourite-beers-list">
+      <li class="beer-item" v-for="beer in favouritebeers">
         <img class="beer-image" :src="beer.image_url"/>
+        <br/>
         <span>{{ beer.name }}</span>
       </li>
     </ul>
@@ -18,7 +19,21 @@ export default {
 </script>
 
 <style lang="css" scoped>
-  .beer-image{
-    max-height:150px;
-  }
+
+.beer-image{
+    max-height:200px;
+}
+
+#favourite-beers-list{
+  list-style-type: none;
+  margin:0 auto;
+}
+
+.beer-item{
+  margin-bottom:50px;
+  display: inline-block;
+  width: 200px;
+  text-align:center;
+}
+
 </style>

@@ -33,10 +33,19 @@ export default {
 .beer-image{
   max-height:150px;
 }
+
 .beer-item{
   margin-bottom:50px;
   display: inline-block;
-  width: 150px;
+  width: 200px;
+  height:220px;
+  padding: 20px;
+  margin: 0 20px 20px 0;
   text-align:center;
+  border: 4px solid #000;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background-color:#fff;
 }
 </style>
