@@ -123,7 +123,6 @@ h1{
     display: flex;
     flex-direction: row;
     /* width:300px; */
-    overflow: scroll;
 }
 
 #beer-list{
