@@ -2,7 +2,7 @@
   <div id="app">
     <div id="header">
       <a id="back-to-top"><h1>BREWDOG BEER APP</h1></a>
-      <a href="#favourites-link"><p>View Favourites</p></a>
+      <a href="#favourites-link" id="link-style"><p>View Favourites</p></a>
     </div>
     <div id="container">
       <div id="left-column">
@@ -11,7 +11,8 @@
         </div>
         <div id="favourite-beers">
           <a id="favourites-link"><favourite-beers :favouritebeers="favouriteBeers"></favourite-beers></a>
-          <a href="#back-to-top">^ back to top</a>
+          <br/>
+          <a href="#back-to-top" id="link-style">^ back to top</a>
         </div>
       </div>
       <div id="right-column">
@@ -52,13 +53,23 @@ export default {
          .then(beers => this.beers=this.beers.concat(beers))
      }
 
+    // fetch('https://api.punkapi.com/v2/beers')
+    //   .then(response => response.json())
+    //   .then(beers => this.beers=this.beers.concat(beers))
+
     eventBus.$on('selected-beer', (beer) =>{
       this.selectedBeer = beer;
     });
 
     eventBus.$on('favourite-beer', (beer) => {
-      this.favouriteBeers.push(beer);
+        if (!this.favouriteBeers.includes(beer)){
+          this.favouriteBeers.push(beer);
+        }
     });
+
+    eventBus.$on('favourite-beers', (beers) => {
+      this.favouriteBeers = beers;
+    })
   }
 }
 </script>
@@ -73,37 +84,26 @@ export default {
   color: #2c3e50;
   margin:0;
   padding:20px;
-  background-color: #1ba7cd;;
+  background-color: #1ba7cd;
 }
 
 h1{
   color: #fff;
   font-size:40px;
+  margin:0 0 10px 0;
 }
 
 #header{
   margin-left:50px;
 }
 
-#header a{
+#link-style{
   text-decoration:none;
   color:#fff;
   font-weight:bold;
 }
 
-#header a:hover{
-  text-decoration:underline;
-  font-weight:bold;
-}
-
-
-#favourite-beers a{
-  text-decoration:none;
-  color:#fff;
-  font-weight:bold;
-}
-
-#favourite-beers a:hover{
+#link-style:hover{
   text-decoration:underline;
   font-weight:bold;
 }
@@ -115,6 +115,8 @@ h1{
 
 #left-column{
   width: 75%;
+  display:flex;
+  flex-direction:column;
 }
 
 #right-column{
@@ -133,14 +135,12 @@ h1{
   position: fixed;
   margin-right:40px;
   padding-top:0px;
-  margin-top: -40px;
 }
 
 #favourite-beers{
   /* position:fixed;
   margin-top:500px; */
 }
-
 
 
 </style>

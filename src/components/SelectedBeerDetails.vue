@@ -28,4 +28,25 @@ export default {
   max-height:150px;
 }
 
+button{
+  background-color: #fff;
+  border: none;
+  color: #000 !important;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 12pt;
+  cursor: pointer;
+  /* margin-top:30px; */
+}
+
+button:hover {
+  background-color: #d3d3d3;
+  border: none;
+  color: #000000 !important;
+  padding: 10px;
+  text-decoration: none !important;
+  font-size: 12pt;
+  /* margin-top:30px; */
+}
+
 </style>
