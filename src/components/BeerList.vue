@@ -1,7 +1,7 @@
 <template lang="html">
   <section>
     <ul id="beer-list">
-      <li v-on:click="handleClick(index)" class="beer-item" :value="index" v-for="(beer, index) in beers">
+      <li v-on:click="handleClick(index)" class="beer-item" v-bind:value="index" v-for="(beer, index) in beers">
         <img class="beer-image" :src="beer.image_url">
         <br/>
         <span>{{ beer.name }}</span>
@@ -12,6 +12,7 @@
 
 <script>
 import {eventBus} from '../main.js';
+
 export default {
   name: 'beer-list',
   props: ['beers'],

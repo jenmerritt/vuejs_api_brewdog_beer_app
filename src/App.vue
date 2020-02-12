@@ -1,23 +1,24 @@
 <template>
   <div id="app">
     <div id="header">
-      <a id="back-to-top"><h1>BREWDOG BEER APP</h1></a>
+
+      <a id="back-to-top"><h1><img id="logo" src="./assets/logo.png"/> BREWDOG BEER APP</h1></a>
       <a href="#favourites-link" id="link-style"><p>View Favourites</p></a>
     </div>
     <div id="container">
       <div id="left-column">
         <div id="beer-list">
-          <beer-list :beers="beers"></beer-list>
+          <beer-list v-bind:beers="beers"></beer-list>
         </div>
         <div id="favourite-beers">
-          <a id="favourites-link"><favourite-beers :favouritebeers="favouriteBeers"></favourite-beers></a>
+          <a id="favourites-link"><favourite-beers v-bind:favouritebeers="favouriteBeers"></favourite-beers></a>
           <br/>
           <a href="#back-to-top" id="link-style">^ back to top</a>
         </div>
       </div>
       <div id="right-column">
         <div id="selected-beer-details">
-          <selected-beer-details :beer="selectedBeer"></selected-beer-details>
+          <selected-beer-details v-bind:beer="selectedBeer"></selected-beer-details>
         </div>
       </div>
     </div>
@@ -141,5 +142,8 @@ h1{
   margin-top:500px; */
 }
 
+#logo{
+  max-width:30px;
+}
 
 </style>
