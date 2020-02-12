@@ -2,6 +2,8 @@
 
 This project was completed during my time studying at CodeClan. The project was a paired lab and the purpose was to practice using an external API, Vue.js and JavaScript. We had 6 hours to work on the project.
 
+The project can be viewed at: https://jmm-brewdog-beer-app.now.sh/
+
 Landing Page, Beer Selected:
 ![Image of Landing Page](ViewBeers.png)
 
@@ -13,6 +15,7 @@ View Favourite Beers:
 - We had a discussion about what we wanted to achieve and drew some basic wireframes.
 - Then we setup a Vue.js project and worked to get the data we wanted displaying on the page.
 - Once the basic MVP was in place, I worked on the styling and my teammate did some exploration of returning additional data from the API. We then came together to consolidate our learning and finish off some of the other task extensions including "Allow the user to deselect favourite beers" and "Prevent the user from marking the same beer as a favourite more than once".
+- I then deployed the project on ZEIT now.
 
 ## Challenges and Learnings:
 - It was a good practice of using Vue.js to dynamically display content, and deciding what data from the API to display, and how to lay it out for the user in a way that was easy for them to consume.
